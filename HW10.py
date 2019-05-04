@@ -9,7 +9,7 @@ import string
 import re
 
 
-FILE_PATH = "HW10/Autochecker4Chinese-master/token_freq_pos%40350k_jieba.txt"
+FILE_PATH = "data/token_freq_pos%40350k_jieba.txt"
 PUNCTUATION_LIST = string.punctuation
 PUNCTUATION_LIST += u'。，？：；｛｝［］‘“”《》／！％……（）'
 
@@ -55,7 +55,7 @@ def get_candidates( error_phrase ):
 	candidates_3nd_order = []
 	
 	error_pinyin = pinyin.get(error_phrase, format="strip", delimiter="/").encode("utf-8")
-	cn_words_dict = load_cn_words_dict( "HW10/Autochecker4Chinese-master/cn_dict.txt" )
+	cn_words_dict = load_cn_words_dict( "data/cn_dict.txt" )
 	candidate_phrases = list( known(edits1(error_phrase, cn_words_dict)) )
 	
 	for candidate_phrase in candidate_phrases:
