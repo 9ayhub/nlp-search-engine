@@ -1,1 +1,1 @@
-data
+my_index.txt：用倒排索引处理data中的语料文件的结果
